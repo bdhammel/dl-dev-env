@@ -43,13 +43,6 @@ RUN pip --no-cache-dir install \
         pytest \
         ipython
 
-# Install Deep Learning environment
-RUN pip --no-cache-dir install \
-        https://download.pytorch.org/whl/cu100/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl \
-        torchvision \ 
-        tensorflow \
-        keras
-
 # Expose Ports for TensorBoard (6006), Ipython (8888)
 EXPOSE 6006 8888
 
@@ -59,4 +52,3 @@ CMD ["/bin/bash"]
 # Set up environment
 RUN cd ~ && git clone https://github.com/bdhammel/dotfiles.git && "./dotfiles/makesymlinks.sh"
 RUN bash -c 'vim -T dumb -n -i NONE -es -S <(echo -e "silent! PluginInstall qall!")'
-RUN echo 'export PS1="\[\e[38;5;33m\](DOCKER) \[\e[38;5;64m\]\W\e[00m\] $ "' >> ~/.bashrc
