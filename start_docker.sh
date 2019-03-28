@@ -10,7 +10,7 @@ if [[ $OSTYPE == linux* ]]; then
         --network=host \
         --hostname $(hostname) \
         --runtime=nvidia \
-        --workdir="/root/Documents" \
+        --workdir=$THIS_DIR \
         --volume="/Users/$USER/Documents:/root/Documents" \
         --volume="$HOME/.Xauthority:/home/mythic/.Xauthority" \
         --user root \
@@ -19,7 +19,7 @@ if [[ $OSTYPE == linux* ]]; then
 else
     docker run --rm -it \
         -e DISPLAY=host.docker.internal:0 \
-        --workdir="/root/Documents" \
+        --workdir=$THIS_DIR \
         --volume="/Users/$USER/Documents:/root/Documents" \
         --user root \
         dl_docker:cpu \
