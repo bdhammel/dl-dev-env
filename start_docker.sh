@@ -11,7 +11,7 @@ if [[ $OSTYPE == linux* ]]; then
         --hostname $(hostname) \
         --runtime=nvidia \
         --workdir=$THIS_DIR \
-        --volume="/Users/$USER/Documents:/root/Documents" \
+        --volume="$HOME/Documents:/root/Documents" \
         --volume="$HOME/.Xauthority:/home/mythic/.Xauthority" \
         --user root \
         dl_docker:gpu \
@@ -20,7 +20,7 @@ else
     docker run --rm -it \
         -e DISPLAY=host.docker.internal:0 \
         --workdir=$THIS_DIR \
-        --volume="/Users/$USER/Documents:/root/Documents" \
+        --volume="$HOME/Documents:/root/Documents" \
         --user root \
         dl_docker:cpu \
         bash
