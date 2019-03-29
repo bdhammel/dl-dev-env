@@ -12,7 +12,7 @@ if [[ $OSTYPE == linux* ]]; then
         --runtime=nvidia \
         --workdir=$THIS_DIR \
         --volume="$HOME/Documents:/root/Documents" \
-        --volume="$HOME/.Xauthority:/home/mythic/.Xauthority" \
+        --volume="$HOME/.Xauthority:/root/.Xauthority" \
         --user root \
         dl_docker:gpu \
         bash

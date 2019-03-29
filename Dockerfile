@@ -38,7 +38,10 @@ RUN pip --no-cache-dir install \
         numpy \
         scipy \
         scikit-learn \
+        scikit-image \
+        h5py \
         matplotlib \
+        pandas \
         flake8 \
         pytest \
         ipython
